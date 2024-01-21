@@ -1,0 +1,28 @@
+{
+  "name": "fafsl",
+  "version": "1.0.0",
+  "description": "Finally, a falling sand library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sollybunny/fafsl.git"
+  },
+  "keywords": [
+    "sand",
+    "powder",
+    "dust",
+    "falling-sand",
+    "powder-toy",
+    "simulation",
+    "physics"
+  ],
+  "author": "SollyBunny",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sollybunny/fafsl/issues"
+  },
+  "homepage": "https://github.com/sollybunny/fafsl#readme"
+}
