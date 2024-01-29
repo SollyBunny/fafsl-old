@@ -44,12 +44,22 @@ class Tilemap {
 		this.types = types ?? [
 			{
 				name: "air",
+				char: " ",
+			}, {
+				name: "metal",
+				char: "M",
+				color: [148, 153, 158],
+				density: 3,
 			}, {
 				name: "sand",
+				char: "S",
+				color: [255, 255, 102],
 				fluid: Tilemap.FLUID_SAND,
 				density: 2,
 			}, {
 				name: "water",
+				char: "W",
+				color: [19, 19, 236],
 				fluid: Tilemap.FLUID_LIQUID,
 				density: 1,
 			}
@@ -80,19 +90,15 @@ class Tilemap {
 		}
 		this.boundary = boundary;
 	}
-	stringify(w, h, force) {
+	stringify(w, h) {
 		w = w ?? this.w;
 		h = h ?? this.h;
-		if (!force && (w > 50 || h > 50)) {
-			console.warn("This tilemap is massive, pass true to print anyway");
-			return;
-		}
 		let out = "";
 		for (let y = 0; y < h; ++y) {
 			for (let x = 0; x < w; ++x) {
 				const tile = this.getTile(x, y);
-				if (tile === 0) out += "__";
-				else out += `_${tile}`;
+				const type = this.types[tile] || this.types[0];
+				out += `${type.color ? `\x1b[38;2;${type.color[0]};${type.color[1]};${type.color[2]}m`: ""}${type.char}${type.char}${type.color ? "\x1b[0m" : ""}`
 			}
 			out += "\n";
 		}
