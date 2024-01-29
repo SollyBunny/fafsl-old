@@ -2,9 +2,10 @@
   "name": "fafsl",
   "version": "1.0.0",
   "description": "Finally, a falling sand library",
-  "main": "index.js",
+  "type": "module",
+  "main": "fafsl.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./test.js"
   },
   "repository": {
     "type": "git",
